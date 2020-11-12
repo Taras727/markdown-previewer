@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import $ from 'jquery';
+import Frame from './Frame';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid d-flex justify-content-around vh-100">
+      <Frame ID='editor' />
+      <Frame ID='previewer' />
     </div>
   );
+
+  // function resize(event) {
+  //   let container = event.target.closest('.container-fluid'),
+  //       currentWindowId = event.target.closest('.flex-column').querySelector('textarea').id,
+  //       sibilingWindow = Array.from(container.children).find(child => child.querySelector('textarea').id !== currentWindowId);
+
+  //   if(sibilingWindow) {
+  //     hiddenWindow = sibilingWindow;
+  //     $(sibilingWindow).remove();
+  //   } else {
+  //     switch(currentWindowId) {
+  //       case 'editor':
+  //         container.append(hiddenWindow);
+  //         break;
+
+  //       case 'previewer':
+  //         container.prepend(hiddenWindow);
+  //         break;
+  //     }
+  //   }
+  // }
 }
 
 export default App;
